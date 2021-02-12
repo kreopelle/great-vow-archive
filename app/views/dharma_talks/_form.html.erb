@@ -1,7 +1,7 @@
 <%= form_with(model: dharma_talk) do |form| %>
   <% if dharma_talk.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dharma_talk.errors.count, "error") %> prohibited this dharma_talk from being saved:</h2>
+      <h2><%= pluralize(dharma_talk.errors.count, "error") %> prohibited this dharma talk from being saved:</h2>
 
       <ul>
         <% dharma_talk.errors.each do |error| %>
@@ -23,12 +23,18 @@
 
   <div class="field">
     <%= form.label :speaker_id %>
-    <%= form.text_field :speaker_id %>
+    <%= form.collection_select :speaker_id,
+      Speaker.order(:name),:id,:name,
+      include_blank: true
+    %>
   </div>
 
   <div class="field">
     <%= form.label :location_id %>
-    <%= form.text_field :location_id %>
+    <%= form.collection_select :location_id,
+      Location.order(:name),:id,:name,
+      include_blank: true
+    %>
   </div>
 
   <div class="field">

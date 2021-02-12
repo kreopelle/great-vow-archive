@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th>Speaker</th>
       <th>Location</th>
       <th>Date</th>
@@ -18,9 +17,8 @@
     <% @dharma_talks.each do |dharma_talk| %>
       <tr>
         <td><%= dharma_talk.title %></td>
-        <td><%= dharma_talk.description %></td>
-        <td><%= dharma_talk.speaker_id %></td>
-        <td><%= dharma_talk.location_id %></td>
+        <td><%= dharma_talk.speaker.name %></td>
+        <td><%= dharma_talk.location.name %></td>
         <td><%= dharma_talk.date %></td>
         <td><%= link_to 'Show', dharma_talk %></td>
         <td><%= link_to 'Edit', edit_dharma_talk_path(dharma_talk) %></td>
