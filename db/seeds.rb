@@ -8,14 +8,14 @@
 
 chozen = Speaker.create(name: 'Chozen Bays', role: 'Roshi')
 hogen = Speaker.create(name: 'Hogen Bays', role: 'Roshi')
-jomon = Speaker.create(name: 'Laura Jomon Martin', 'Dharma Teacher')
+jomon = Speaker.create(name: 'Laura Jomon Martin', role: 'Dharma Teacher')
 jogen = Speaker.create(name: 'Jogen', role: 'Sensei')
 myoyu = Speaker.create(name: 'Myoyu Voekel')
 
 heart_of_wisdom = Location.create(name: 'Heart of Wisdom')
 great_vow = Location.create(name: 'Great Vow')
 
-DharmaTalk.create(
+DharmaTalk.create([
 	{
 		title: 'How to Live Non-Duality? On the koan Joshu and the Hermits',
 		speaker: hogen,
@@ -29,46 +29,47 @@ DharmaTalk.create(
 		date: Date.new(2021, 01, 27),
 	},
 	{
-		title: 'Enter the Bright Clear Open'
+		title: 'Enter the Bright Clear Open',
 		speaker: chozen,
 		location: great_vow,
-		date: Date.new(2014, 09, 01)
+		date: Date.new(2014, 9, 01),
 	},
 	{
 		title: 'Golden Thread of Buddha Nature',
 		speaker: chozen,
 		location: great_vow,
-		date: Date.new(2018, 10, 01)
+		date: Date.new(2018, 10, 01),
 	},
 	{
 		title: 'How to be a Student of Dharma?',
 		speaker: jogen,
 		location: heart_of_wisdom,
-		date: Date.new(2017, 10, 02)
+		date: Date.new(2017, 10, 02),
 	},
 	{
 		title: 'Wind in the Warehouse',
 		speaker: chozen,
 		location: great_vow,
-		date: Date.new(2021, 02, 11)
+		date: Date.new(2021, 02, 11),
 	},
 	{
 		title: 'Always Changing and Continuously Creative',
 		speaker: myoyu,
 		location: great_vow,
-		date: Date.new(2021, 02, 11)
+		date: Date.new(2021, 02, 11),
 	},
 	{
 		title: 'Floating on the Waves of the Universe',
 		speaker: hogen,
 		location: great_vow,
-		date: Date.new(2021, 01, 23)
+		date: Date.new(2021, 01, 23),
 	},
 	{
 		title: 'The Mystery of Intention',
 		speaker: jomon,
 		location: great_vow,
-		date: (2021, 01, 22)
+		date: Date.new(2021, 01, 22),
 	},
+])
 
-)
+puts 'Database seeded!'
