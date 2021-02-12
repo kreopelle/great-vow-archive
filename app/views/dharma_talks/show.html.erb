@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dharma_talk.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dharma_talk.description %>
+</p>
+
+<p>
+  <strong>Speaker:</strong>
+  <%= @dharma_talk.speaker_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @dharma_talk.location_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @dharma_talk.date %>
+</p>
+
+<%= link_to 'Edit', edit_dharma_talk_path(@dharma_talk) %> |
+<%= link_to 'Back', dharma_talks_path %>

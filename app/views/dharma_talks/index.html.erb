@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dharma Talks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Speaker</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dharma_talks.each do |dharma_talk| %>
+      <tr>
+        <td><%= dharma_talk.title %></td>
+        <td><%= dharma_talk.description %></td>
+        <td><%= dharma_talk.speaker_id %></td>
+        <td><%= dharma_talk.location_id %></td>
+        <td><%= dharma_talk.date %></td>
+        <td><%= link_to 'Show', dharma_talk %></td>
+        <td><%= link_to 'Edit', edit_dharma_talk_path(dharma_talk) %></td>
+        <td><%= link_to 'Destroy', dharma_talk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dharma Talk', new_dharma_talk_path %>
