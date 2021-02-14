@@ -16,11 +16,10 @@
   <tbody>
     <% @dharma_talks.each do |dharma_talk| %>
       <tr>
-        <td><%= dharma_talk.title %></td>
-        <td><%= dharma_talk.speaker.name %></td>
+        <td><%= link_to dharma_talk.title, dharma_talk %></td>
+        <td><%= dharma_talk.speaker.name_role %></td>
         <td><%= dharma_talk.location.name %></td>
         <td><%= dharma_talk.date %></td>
-        <td><%= link_to 'Show', dharma_talk %></td>
         <td><%= link_to 'Edit', edit_dharma_talk_path(dharma_talk) %></td>
         <td><%= link_to 'Destroy', dharma_talk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
