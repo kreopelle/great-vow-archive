@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :dharma_talk do
     title { FFaker::Book.title }

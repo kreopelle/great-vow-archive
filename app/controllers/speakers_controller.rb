@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SpeakersController < ApplicationController
-  before_action :set_speaker, only: %i[ show edit update destroy ]
+  before_action :set_speaker, only: %i[show edit update destroy]
 
   # GET /speakers or /speakers.json
   def index
@@ -7,8 +9,7 @@ class SpeakersController < ApplicationController
   end
 
   # GET /speakers/1 or /speakers/1.json
-  def show
-  end
+  def show; end
 
   # GET /speakers/new
   def new
@@ -16,8 +17,7 @@ class SpeakersController < ApplicationController
   end
 
   # GET /speakers/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /speakers or /speakers.json
   def create
@@ -25,7 +25,7 @@ class SpeakersController < ApplicationController
 
     respond_to do |format|
       if @speaker.save
-        format.html { redirect_to @speaker, notice: "Speaker was successfully created." }
+        format.html { redirect_to @speaker, notice: 'Speaker was successfully created.' }
         format.json { render :show, status: :created, location: @speaker }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SpeakersController < ApplicationController
   def update
     respond_to do |format|
       if @speaker.update(speaker_params)
-        format.html { redirect_to @speaker, notice: "Speaker was successfully updated." }
+        format.html { redirect_to @speaker, notice: 'Speaker was successfully updated.' }
         format.json { render :show, status: :ok, location: @speaker }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +51,20 @@ class SpeakersController < ApplicationController
   def destroy
     @speaker.destroy
     respond_to do |format|
-      format.html { redirect_to speakers_url, notice: "Speaker was successfully destroyed." }
+      format.html { redirect_to speakers_url, notice: 'Speaker was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_speaker
-      @speaker = Speaker.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def speaker_params
-      params.require(:speaker).permit(:name, :bio, :role)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_speaker
+    @speaker = Speaker.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def speaker_params
+    params.require(:speaker).permit(:name, :bio, :role)
+  end
 end
