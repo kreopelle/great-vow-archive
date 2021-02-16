@@ -25,12 +25,21 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Ruby code linting
+gem 'rubocop', '~> 1.10', require: false
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Generate instances of models for use within tests
+  gem 'factory_bot_rails', '~> 6.1'
+  # Create randomized, fake attributes for factories
+  gem 'ffaker', '~> 2.17'
+  # Run 'rspec' to execute the test suite
+  gem 'rspec-rails', '~> 4.0.2'
 end
 
 group :development do
@@ -42,6 +51,13 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  # Track test coverage for code
+  gem 'simplecov', '~> 0.21.2'
+  # Helpers to simplify testing common behavior
+  gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
